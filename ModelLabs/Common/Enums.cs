@@ -21,35 +21,50 @@ namespace FTN.Common
 		ABC = 0xE,
 		ABCN = 0xF
 	}
-	
-	public enum TransformerFunction : short
-	{
-		Supply = 1,				// Supply transformer
-		Consumer = 2,			// Transformer supplying a consumer
-		Grounding = 3,			// Transformer used only for grounding of network neutral
-		Voltreg = 4,			// Feeder voltage regulator
-		Step = 5,				// Step
-		Generator = 6,			// Step-up transformer next to a generator.
-		Transmission = 7,		// HV/HV transformer within transmission network.
-		Interconnection = 8		// HV/HV transformer linking transmission network with other transmission networks.
-	}
-	
-	public enum WindingConnection : short
-	{
-		Y = 1,		// Wye
-		D = 2,		// Delta
-		Z = 3,		// ZigZag
-		I = 4,		// Single-phase connection. Phase-to-phase or phase-to-ground is determined by elements' phase attribute.
-		Scott = 5,   // Scott T-connection. The primary winding is 2-phase, split in 8.66:1 ratio
-		OY = 6,		// 2-phase open wye. Not used in Network Model, only as result of Topology Analysis.
-		OD = 7		// 2-phase open delta. Not used in Network Model, only as result of Topology Analysis.
+
+	public enum RegulatingControlModelKind : short
+    {
+		ActivePower = 1,
+		Admittance = 2,
+		CurrentFlow = 3,
+		Fixed = 4,
+		PowerFactor = 5,
+		ReactivePower = 6,
+		Temperature = 7,
+		TimeScheduled = 8,
+		Voltege = 9,
+		Unknown = 10
 	}
 
-	public enum WindingType : short
-	{
-		None = 0,
-		Primary = 1,
-		Secondary = 2,
-		Tertiary = 3
-	}			
+	public enum UnitSymbol : short
+    {
+		A = 1,
+		F = 2,
+		H = 3,
+		Hz = 4,
+		J = 5,
+		N = 6,
+		Pa = 7,
+		S = 8,
+		V = 9,
+		VA = 10,
+		VAh = 11,
+		VAr = 12,
+		VArh = 13,
+		W = 14,
+		Wh = 15,
+		deg = 16,
+		degC = 17,
+		g = 18,
+		h = 19,
+		m = 20,
+		m2 = 21,
+		m3 = 22,
+		min = 23,
+		none = 24,
+		ohm = 25,
+		rad = 26,
+		s = 27,
+		Unknown = 28
+	}		
 }

@@ -11,12 +11,11 @@ using System.Threading;
 using System.Diagnostics;
 using FTN.Common;
 using FTN.ServiceContracts;
-using FTN.Services.NetworkModelService.TestClient;
+using System.Collections;
 
-
-namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
+namespace ClientAppTest
 {
-	public class TestGda : IDisposable
+	public class TestGdaApp : IDisposable
 	{			
 
 		private ModelResourcesDesc modelResourcesDesc = new ModelResourcesDesc();
@@ -39,7 +38,7 @@ namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
 			}
 		}
 		
-		public TestGda()
+		public TestGdaApp()
 		{
 		}
 
@@ -87,7 +86,48 @@ namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
 			return rd;
 		}
 
-		public List<long> GetExtentValues(ModelCode modelCode)
+        public ResourceDescription GetValues(long globalId, List<ModelCode> modelCodeList)
+        {
+            string message = "Getting values method started.";
+            Console.WriteLine(message);
+            CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+
+            XmlTextWriter xmlWriter = null;
+            ResourceDescription rd = null;
+
+            try
+            {
+                short type = ModelCodeHelper.ExtractTypeFromGlobalId(globalId);
+
+                rd = GdaQueryProxy.GetValues(globalId, modelCodeList);
+
+                xmlWriter = new XmlTextWriter(Config.Instance.ResultDirecotry + "\\GetValues_Results.xml", Encoding.Unicode);
+                xmlWriter.Formatting = Formatting.Indented;
+                rd.ExportToXml(xmlWriter);
+                xmlWriter.Flush();
+
+                message = "Getting values method successfully finished.";
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+            catch (Exception e)
+            {
+                message = string.Format("Getting values method for entered id = {0} failed.\n\t{1}", globalId, e.Message);
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+            finally
+            {
+                if (xmlWriter != null)
+                {
+                    xmlWriter.Close();
+                }
+            }
+
+            return rd;
+        }
+
+        public List<long> GetExtentValues(ModelCode modelCode)
 		{
             string message = "Getting extent values method started.";
             Console.WriteLine(message);
@@ -149,7 +189,68 @@ namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
 			return ids;
 		}
 
-		public List<long> GetRelatedValues(long sourceGlobalId, Association association)
+        public List<long> GetExtentValues(ModelCode modelCode, List<ModelCode> modelCodeList)
+        {
+            string message = "Getting extent values method started.";
+            Console.WriteLine(message);
+            CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+
+            XmlTextWriter xmlWriter = null;
+            int iteratorId = 0;
+            List<long> ids = new List<long>();
+
+            try
+            {
+                int numberOfResources = 2;
+                int resourcesLeft = 0;
+
+
+                iteratorId = GdaQueryProxy.GetExtentValues(modelCode, modelCodeList);
+                resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+
+
+                xmlWriter = new XmlTextWriter(Config.Instance.ResultDirecotry + "\\GetExtentValues_Results.xml", Encoding.Unicode);
+                xmlWriter.Formatting = Formatting.Indented;
+
+                while (resourcesLeft > 0)
+                {
+                    List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);
+
+                    for (int i = 0; i < rds.Count; i++)
+                    {
+                        ids.Add(rds[i].Id);
+                        rds[i].ExportToXml(xmlWriter);
+                        xmlWriter.Flush();
+                    }
+
+                    resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+                }
+
+                GdaQueryProxy.IteratorClose(iteratorId);
+
+                message = "Getting extent values method successfully finished.";
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+
+            }
+            catch (Exception e)
+            {
+                message = string.Format("Getting extent values method failed for {0}.\n\t{1}", modelCode, e.Message);
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+            finally
+            {
+                if (xmlWriter != null)
+                {
+                    xmlWriter.Close();
+                }
+            }
+
+            return ids;
+        }
+
+        public List<long> GetRelatedValues(long sourceGlobalId, Association association)
 		{
             string message = "Getting related values method started.";
             Console.WriteLine(message);
@@ -210,6 +311,209 @@ namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
 						
 			return resultIds;
 		}
+
+        public List<long> GetRelatedValues(long sourceGlobalId, Association association, List<ModelCode> properties)
+        {
+            string message = "Getting related values method started.";
+            Console.WriteLine(message);
+            CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+
+            List<long> resultIds = new List<long>();
+
+
+            XmlTextWriter xmlWriter = null;
+            int numberOfResources = 2;
+
+            try
+            {
+                int iteratorId = GdaQueryProxy.GetRelatedValues(sourceGlobalId, properties, association);
+                int resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+
+                xmlWriter = new XmlTextWriter(Config.Instance.ResultDirecotry + "\\GetRelatedValues_Results.xml", Encoding.Unicode);
+                xmlWriter.Formatting = Formatting.Indented;
+
+                while (resourcesLeft > 0)
+                {
+                    List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);
+
+                    for (int i = 0; i < rds.Count; i++)
+                    {
+                        resultIds.Add(rds[i].Id);
+                        rds[i].ExportToXml(xmlWriter);
+                        xmlWriter.Flush();
+                    }
+
+                    resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+                }
+
+                GdaQueryProxy.IteratorClose(iteratorId);
+
+                message = "Getting related values method successfully finished.";
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+            catch (Exception e)
+            {
+                message = string.Format("Getting related values method  failed for sourceGlobalId = {0} and association (propertyId = {1}, type = {2}). Reason: {3}", sourceGlobalId, association.PropertyId, association.Type, e.Message);
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+            finally
+            {
+                if (xmlWriter != null)
+                {
+                    xmlWriter.Close();
+                }
+            }
+
+            return resultIds;
+        }
+
+        public Dictionary<string, string> GetGIDValues()
+        {
+            int iteratorId = 0;
+            Dictionary<string, string> ids = new Dictionary<string, string>();
+
+            //List<string> gidValue = new List<string>();
+
+            List<ModelCode> concreteClasses = new List<ModelCode>
+            {
+                ModelCode.RTP,
+                ModelCode.DAYTYPE,
+                ModelCode.SEASON,
+                ModelCode.BREAKER,
+                ModelCode.SWITCHSCHEDULE,
+                ModelCode.REGCONTROL,
+                ModelCode.REGSCHEDULE
+            };
+
+            try
+            {
+                int numberOfResources = 2;
+                int resourcesLeft = 0;
+
+                //List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIds(modelCode);
+
+                List<ModelCode> properties = new List<ModelCode> { ModelCode.IDOBJ_GID, ModelCode.IDOBJ_NAME };
+
+                foreach (var item in concreteClasses)
+                {
+                    iteratorId = GdaQueryProxy.GetExtentValues(item, properties);
+                    resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+
+                    while (resourcesLeft > 0)
+                    {
+                        List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);
+
+                        for (int i = 0; i < rds.Count; i++)
+                        {
+                            ids.Add(rds[i].Properties[0].ToString(), rds[i].Properties[1].ToString());
+                        }
+
+                        resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+                    }
+
+                    GdaQueryProxy.IteratorClose(iteratorId);
+                }
+            }
+            catch (Exception e)
+            {
+                string message = string.Format("Getting GID values method failed.\n\t{0}", e.Message);
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+
+            return ids;
+        }
+
+        public List<string> GetModelCodes()
+        {
+            List<string> ids = new List<string>();
+
+            List<ModelCode> concreteClasses = new List<ModelCode>
+            {
+                ModelCode.RTP,
+                ModelCode.DAYTYPE,
+                ModelCode.SEASON,
+                ModelCode.BREAKER,
+                ModelCode.SWITCHSCHEDULE,
+                ModelCode.REGCONTROL,
+                ModelCode.REGSCHEDULE
+            };
+
+            try
+            {
+                foreach (var item in concreteClasses)
+                {
+                    List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIds(item);
+
+                    foreach (var prop in properties)
+                    {
+                        if (!ids.Contains(prop.ToString()))
+                            ids.Add(prop.ToString());
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                string message = string.Format("Getting ModelCode values method failed.\n\t{0}", e.Message);
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+
+            return ids;
+        }
+
+        public List<string> GetModelCodesForEntity(ModelCode modelCode)
+        {
+            List<string> ids = new List<string>();
+
+            try
+            {
+                List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIds(modelCode);
+
+                foreach (var prop in properties)
+                {
+                    if (!ids.Contains(prop.ToString()))
+                        ids.Add(prop.ToString());
+                }
+            }
+            catch (Exception e)
+            {
+                string message = string.Format("Getting ModelCode values method failed.\n\t{0}", e.Message);
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+
+            return ids;
+        }
+
+        public List<string> GetReferencesForGID(long gid)
+        {
+            List<string> ids = new List<string>();
+
+            try
+            {
+                List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIdsForEntityId(gid);
+
+                foreach (var prop in properties)
+                {
+                    char[] chars = ((long)prop).ToString("X").ToCharArray();
+
+                    if (chars[15] == '9')
+                        ids.Add(prop.ToString());
+                }
+            }
+            catch (Exception e)
+            {
+                string message = string.Format("Getting ModelCode values method failed.\n\t{0}", e.Message);
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+
+            return ids;
+        }
 
         #endregion GDAQueryService
 
