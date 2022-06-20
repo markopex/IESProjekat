@@ -22,9 +22,9 @@
 				{
 					rd.AddProperty(new Property(ModelCode.IDOBJ_NAME, cimIdentifiedObject.Name));
 				}
-				if (cimIdentifiedObject.DescriptionHasValue)
+				if (cimIdentifiedObject.AliasNameHasValue)
 				{
-					rd.AddProperty(new Property(ModelCode.IDOBJ_DESCRIPTION, cimIdentifiedObject.Description));
+					rd.AddProperty(new Property(ModelCode.IDOBJ_ALIASNAME, cimIdentifiedObject.AliasName));
 				}
 			}
 		}

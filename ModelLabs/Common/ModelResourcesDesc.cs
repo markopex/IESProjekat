@@ -865,21 +865,24 @@ namespace FTN.Common
 		# region Initialization of metadata
 
 		private void InitializeTypeIdsInInsertOrder()
-		{			
-			typeIdsInInsertOrder.Add(ModelCode.BASEVOLTAGE);
-			typeIdsInInsertOrder.Add(ModelCode.LOCATION);
-			typeIdsInInsertOrder.Add(ModelCode.POWERTR);
-			typeIdsInInsertOrder.Add(ModelCode.POWERTRWINDING);
-			typeIdsInInsertOrder.Add(ModelCode.WINDINGTEST);			
+		{
+			typeIdsInInsertOrder.Add(ModelCode.MARKETROLE);
+			typeIdsInInsertOrder.Add(ModelCode.MARKETPARTICIPANT);
+			typeIdsInInsertOrder.Add(ModelCode.AUCTION);
+			typeIdsInInsertOrder.Add(ModelCode.REASON);
+			typeIdsInInsertOrder.Add(ModelCode.POINT);
+			typeIdsInInsertOrder.Add(ModelCode.BIDTIMESERIES);
+			typeIdsInInsertOrder.Add(ModelCode.MEASUREMENTPOINT);
 		}
 
 		private void InitializeNotSettablePropertyIds()
 		{			
 			notSettablePropertyIds.Add(ModelCode.IDOBJ_GID);
-			notSettablePropertyIds.Add(ModelCode.BASEVOLTAGE_CONDEQS);
-			notSettablePropertyIds.Add(ModelCode.LOCATION_PSRS);
-			notSettablePropertyIds.Add(ModelCode.POWERTRWINDING_TESTS);
-            notSettablePropertyIds.Add(ModelCode.POWERTR_WINDINGS);	
+			notSettablePropertyIds.Add(ModelCode.MARKETROLE_MARKETPARTICIPANT);
+			notSettablePropertyIds.Add(ModelCode.TIMESERIES_MPOINT);
+			notSettablePropertyIds.Add(ModelCode.AUCTION_TIMESERIES);
+            notSettablePropertyIds.Add(ModelCode.REASON_POINT);
+			notSettablePropertyIds.Add(ModelCode.MARKETPARTICIPANT_TIMESERIES);	// added
 		}
 	
 		# endregion Initialization of metadata
