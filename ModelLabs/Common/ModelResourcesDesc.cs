@@ -882,6 +882,7 @@ namespace FTN.Common
 			notSettablePropertyIds.Add(ModelCode.TIMESERIES_MPOINT);
 			notSettablePropertyIds.Add(ModelCode.AUCTION_TIMESERIES);
             notSettablePropertyIds.Add(ModelCode.REASON_POINT);
+			notSettablePropertyIds.Add(ModelCode.REASON_TIMESERIES);
 			notSettablePropertyIds.Add(ModelCode.MARKETPARTICIPANT_TIMESERIES);	// added
 		}
 	

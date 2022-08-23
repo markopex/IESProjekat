@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Xml;
 using FTN.Common;
 using FTN.Services.NetworkModelService.DataModel.Core;
-using FTN.Services.NetworkModelService.DataModel.Wires;
-using FTN.Services.NetworkModelService.DataModel;
-
+using FTN.Services.NetworkModelService.DataModel.MarketCommon;
+using FTN.Services.NetworkModelService.DataModel.MarketManagement;
 
 namespace FTN.Services.NetworkModelService
-{		
-	public class Container
+{
+    public class Container
 	{
 		/// <summary>
 		/// The dictionary of entities. Key = GlobaId, Value = Entity
@@ -122,22 +115,27 @@ namespace FTN.Services.NetworkModelService
 			IdentifiedObject io = null;			
 			switch ((DMSType)type)
 			{
-				case DMSType.BASEVOLTAGE:
-					io = new BaseVoltage(globalId);
+				case DMSType.MARKETROLE:
+					io = new MarketRole(globalId);
 					break;
-
-				case DMSType.LOCATION:
-					io = new Location(globalId);
+				case DMSType.MARKETPRINCIPANT:
+					io = new MarketParticipant(globalId);
 					break;
-				case DMSType.POWERTR:
-					io = new PowerTransformer(globalId);
+				case DMSType.AUCTION:
+					io = new Auction(globalId);
 					break;
-				case DMSType.POWERTRWINDING:
-					io = new TransformerWinding(globalId);
+				case DMSType.REASON:
+					io = new Reason(globalId);
 					break;
-				case DMSType.WINDINGTEST:
-					io = new WindingTest(globalId);
-					break;			
+				case DMSType.POINT:
+					io = new Point(globalId);
+					break;
+				case DMSType.BIDTIMESERIES:
+					io = new BidTimeSeries(globalId);
+					break;
+				case DMSType.MEASUREMENTPOINT:
+					io = new MeasurementPoint(globalId);
+					break;
 
 				default:					
 					string message = String.Format("Failed to create entity because specified type ({0}) is not supported.", type);

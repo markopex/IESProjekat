@@ -1,4 +1,5 @@
 ﻿using FTN.Common;
+using FTN.Services.NetworkModelService.DataModel.Common;
 using FTN.Services.NetworkModelService.DataModel.Core;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace FTN.Services.NetworkModelService.DataModel.MarketCommon
 {
-    public class MarketParticipant : IdentifiedObject
+    public class MarketParticipant : Organisation
     {
 		private long marketRole;
-		private List<long> timeSeries;
-        public MarketParticipant(long globalId) : base(globalId)
+		private List<long> timeSeries = new List<long>();
+		public MarketParticipant(long globalId) : base(globalId)
         {
         }
 
@@ -78,10 +79,10 @@ namespace FTN.Services.NetworkModelService.DataModel.MarketCommon
 			}
 		}
 
-        #endregion IAccess implementation
+		#endregion IAccess implementation
 
-
-        public override bool IsReferenced
+		#region IReference implementation
+		public override bool IsReferenced
         {
 			get
             {
@@ -138,6 +139,6 @@ namespace FTN.Services.NetworkModelService.DataModel.MarketCommon
 					break;
 			}
 		}
-
-    }
+		#endregion IReference implementation
+	}
 }

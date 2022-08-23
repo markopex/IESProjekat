@@ -98,6 +98,12 @@
     <Compile Include="Core\PowerSystemResource.cs" />
     <Compile Include="MarketCommon\MarketParticipant.cs" />
     <Compile Include="MarketCommon\MarketRole.cs" />
+    <Compile Include="MarketManagement\Auction.cs" />
+    <Compile Include="MarketManagement\BidTimeSeries.cs" />
+    <Compile Include="MarketManagement\MeasurementPoint.cs" />
+    <Compile Include="MarketManagement\Point.cs" />
+    <Compile Include="MarketManagement\Reason.cs" />
+    <Compile Include="MarketManagement\TimeSeries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wires\WindingTest.cs" />
     <Compile Include="Wires\PowerTransformer.cs" />

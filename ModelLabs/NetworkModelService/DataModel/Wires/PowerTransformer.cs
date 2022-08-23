@@ -121,8 +121,6 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
 
 		#endregion IAccess implementation
 
-
-
 		#region IReference implementation
 		
 		public override bool IsReferenced
