@@ -1,0 +1,882 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:cims="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:msg="http://langdale.com.au/2005/Message#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:uml="http://langdale.com.au/2005/UML#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:j.0="http://iec.ch/TC57/2010/CIM-schema-cim15#"
+  xml:base="http://iec.ch/TC57/2010/CIM-schema-cim15" > 
+  <rdf:Description rdf:about="#Point">
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <cims:belongsToCategory rdf:resource="#Package_MarketManagement"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdfs:comment>An identification of a set of values beeing adressed within a specific interval of time.</rdfs:comment>
+    <rdfs:label>Point</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PostalAddress">
+    <cims:belongsToCategory rdf:resource="#Package_Common"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#compound"/>
+    <rdfs:comment>General purpose postal address information.</rdfs:comment>
+    <rdfs:label>PostalAddress</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.ControlBlockOperator">
+    <rdfs:comment>Responsible for :
+1. The coordination of exchanges between its associated Control
+Blocks and the organisation of the coordination of exchange
+programs between its related Control Areas.
+2. The load frequency control within its own block and ensuring that
+its Control Areas respect their obligations in respect to load frequency
+control and time deviation.
+3. The organisation of the settlement and/or compensation between
+its Control Areas.</rdfs:comment>
+    <rdfs:label>ControlBlockOperator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.competitiveRetailer">
+    <rdfs:comment>Competitive retailer.</rdfs:comment>
+    <rdfs:label>competitiveRetailer</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BidTimeSeries.stepIncrementQuantity">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The minimum increment that can be applied for an increase in an activation request.</rdfs:comment>
+    <rdfs:label>stepIncrementQuantity</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="#BidTimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.MeterAdministrator">
+    <rdfs:comment>A party responsible for keeping a database of meters.</rdfs:comment>
+    <rdfs:label>MeterAdministrator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TimeSeries.Reason">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdfs:label>Reason</rdfs:label>
+    <rdfs:range rdf:resource="#Reason"/>
+    <rdfs:domain rdf:resource="#TimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.BalanceResponsibleParty">
+    <rdfs:comment>A party that has a contract proving financial security and identifying
+balance responsibility with the Imbalance Settlement Responsible of
+the Market Balance Area entitling the party to operate in the market.
+This is the only role allowing a party to nominate energy on a
+wholesale level.
+&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;
+The meaning of the word "balance" in this context signifies that that
+the quantity contracted to provide or to consume must be equal to the
+quantity really provided or consumed.
+Equivalent to "Program responsible party" in the Netherlands.
+Equivalent to "Balance group manager" in Germany.
+Equivalent to "market agent" in Spain.</rdfs:comment>
+    <rdfs:label>BalanceResponsibleParty</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.generatorOperator">
+    <rdfs:comment>Generator merchant operator.</rdfs:comment>
+    <rdfs:label>generatorOperator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Package_IEC61970">
+    <cims:belongsToCategory rdf:resource="#Package_TC57CIM"/>
+    <rdfs:comment>The ControlArea package models area specifications which can be used for a variety of purposes.  The package as a whole models potentially overlapping control area specifications for the purpose of actual generation control, load forecast area load capture, or powerflow based analysis.</rdfs:comment>
+    <rdfs:label>IEC61970</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.ReconciliationAccountable">
+    <rdfs:comment>A party that is financially accountable for the reconciled volume of
+energy products for a profiled Accounting Point.</rdfs:comment>
+    <rdfs:label>ReconciliationAccountable</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TimeSeries.MarketParticipant">
+    <rdfs:label>MarketParticipant</rdfs:label>
+    <rdfs:range rdf:resource="#MarketParticipant"/>
+    <rdfs:domain rdf:resource="#TimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Point.bidQuantity">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The quantity provided in a tender.</rdfs:comment>
+    <rdfs:label>bidQuantity</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="#Point"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketParticipant">
+    <rdfs:subClassOf rdf:resource="#Organisation"/>
+    <cims:belongsToCategory rdf:resource="#Package_MarketCommon"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdfs:comment>An identification of a party acting in a electricity market business process. This class is used to identify organizations that can participate in market management and/or market operations.</rdfs:comment>
+    <rdfs:label>MarketParticipant</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.Consumer">
+    <rdfs:comment>A party that consumes electricity.
+&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;
+This is a Type of Party Connected to the Grid.</rdfs:comment>
+    <rdfs:label>Consumer</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Organisation">
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <cims:belongsToCategory rdf:resource="#Package_Common"/>
+    <rdfs:comment>Organisation that might have roles as utility, contractor, supplier, manufacturer, customer, etc.</rdfs:comment>
+    <rdfs:label>Organisation</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Organisation.streetAddress">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Street address.</rdfs:comment>
+    <rdfs:label>streetAddress</rdfs:label>
+    <rdfs:range rdf:resource="#StreetAddress"/>
+    <rdfs:domain rdf:resource="#Organisation"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.InterconnectionTradeResponsible">
+    <rdfs:comment>Is a Balance Responsible Party or depends on one. He is recognised
+by the Nomination Validator for the nomination of already allocated
+capacity.
+&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;
+This is a type of Balance Responsible Party.</rdfs:comment>
+    <rdfs:label>InterconnectionTradeResponsible</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Package_IEC61968">
+    <cims:belongsToCategory rdf:resource="#Package_TC57CIM"/>
+    <rdfs:comment>This package is an extension of the Metering package and contains the information classes that support specialised applications such as prepayment metering. These classes are generally associated with the collection and control of revenue from the customer for a delivered service.</rdfs:comment>
+    <rdfs:label>IEC61968</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.transmissionOperator">
+    <rdfs:comment>Transmission operator.</rdfs:comment>
+    <rdfs:label>transmissionOperator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.complianceMonitor">
+    <rdfs:comment>Compliance monitor.</rdfs:comment>
+    <rdfs:label>complianceMonitor</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Status">
+    <cims:belongsToCategory rdf:resource="#Package_Common"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#compound"/>
+    <rdfs:comment>Current status information relevant to an entity.</rdfs:comment>
+    <rdfs:label>Status</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.transmissionOwner">
+    <rdfs:comment>Transmission owner.</rdfs:comment>
+    <rdfs:label>transmissionOwner</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MeasurementPoint">
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <cims:belongsToCategory rdf:resource="#Package_MarketManagement"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdfs:comment>The location where one or more products are measured. This may be a physical or virtual location.</rdfs:comment>
+    <rdfs:label>MeasurementPoint</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BidTimeSeries.divisible">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>An indication whether or not each element of the bid may be partially accepted or not.</rdfs:comment>
+    <rdfs:label>divisible</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#BidTimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ElectronicAddress">
+    <cims:belongsToCategory rdf:resource="#Package_Common"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#compound"/>
+    <rdfs:comment>Electronic address information.</rdfs:comment>
+    <rdfs:label>ElectronicAddress</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.ResourceProvider">
+    <rdfs:comment>A role that manages a resource object and provides the schedules for
+it</rdfs:comment>
+    <rdfs:label>ResourceProvider</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Point.position">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>A sequential value representing the relative position within a given time interval.</rdfs:comment>
+    <rdfs:label>position</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Point"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TimeSeries.product">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The type of the product such as Power, energy, reactive power, transport capacity that is the subject of the time series.</rdfs:comment>
+    <rdfs:label>product</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#TimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketParticipant.MarketRole">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdfs:label>MarketRole</rdfs:label>
+    <rdfs:range rdf:resource="#MarketRole"/>
+    <rdfs:domain rdf:resource="#MarketParticipant"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.ImbalanceSettlementResponsible">
+    <rdfs:comment>A party that is responsible for settlement of the difference between
+the contracted quantities and the realised quantities of energy
+products for the Balance Responsible Parties in a Market Balance
+Area.
+Note:
+The Imbalance Settlement Responsible has not the responsibility to
+invoice. The Imbalance Settlement Responsible may delegate the
+invoicing responsibility to a more generic role such as a Billing Agent.</rdfs:comment>
+    <rdfs:label>ImbalanceSettlementResponsible</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.standardsDeveloper">
+    <rdfs:comment>Standards developer.</rdfs:comment>
+    <rdfs:label>standardsDeveloper</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind">
+    <cims:belongsToCategory rdf:resource="#Package_MarketCommon"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
+    <rdfs:comment>Kind of market role an organisation can have.</rdfs:comment>
+    <rdfs:label>MarketRoleKind</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BidTimeSeries">
+    <rdfs:subClassOf rdf:resource="#TimeSeries"/>
+    <cims:belongsToCategory rdf:resource="#Package_MarketManagement"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdfs:comment>The formal specification of specific characteristics related to a bid.</rdfs:comment>
+    <rdfs:label>BidTimeSeries</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.TradeResponsibleParty">
+    <rdfs:comment>A party who can be brought to rights, legally and financially, for any
+imbalance between enegry nominated and consumed for all
+associated Accounting Points.
+&lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;
+A power exchange without any privileged responsibilities acts as a
+Trade Responsible Party.
+&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;
+This is a type of Balance Responsible Party.</rdfs:comment>
+    <rdfs:label>TradeResponsibleParty</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Package_MarketManagement">
+    <cims:belongsToCategory rdf:resource="#Package_IEC62325"/>
+    <rdfs:comment>This package contains all core CIM Market Extensions required for market management systems.</rdfs:comment>
+    <rdfs:label>MarketManagement</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#StreetAddress">
+    <cims:belongsToCategory rdf:resource="#Package_Common"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#compound"/>
+    <rdfs:comment>General purpose street address information.</rdfs:comment>
+    <rdfs:label>StreetAddress</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.BlockEnergyTrader">
+    <rdfs:comment>A party that is selling or buying energy on a firm basis (a fixed volume
+per market time period).</rdfs:comment>
+    <rdfs:label>BlockEnergyTrader</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.resourcePlanner">
+    <rdfs:comment>Resource planner.</rdfs:comment>
+    <rdfs:label>resourcePlanner</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.ConsumptionResponsibleParty">
+    <rdfs:comment>A party who can be brought to rights, legally and financially, for any
+imbalance between enegry nominated and consumed for all
+associated Accounting Points.
+&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;
+This is a type of Balance Responsible Party.</rdfs:comment>
+    <rdfs:label>ConsumptionResponsibleParty</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BidTimeSeries.blockBid">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Indication that  the values in the period are considered as a whole. They cannot be changed or subdivided.</rdfs:comment>
+    <rdfs:label>blockBid</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#BidTimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.loadServingEntity">
+    <rdfs:comment>Load serving entity.</rdfs:comment>
+    <rdfs:label>loadServingEntity</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.MeteredDataResponsible">
+    <rdfs:comment>A party responsible for the establishment and validation of metered
+data based on the collected data received from the Metered Data
+Collector. The party is responsible for the history of metered data for
+a Metering Point.</rdfs:comment>
+    <rdfs:label>MeteredDataResponsible</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Reason.code">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The motivation of an act in coded form.</rdfs:comment>
+    <rdfs:label>code</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Reason"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.CapacityTrader">
+    <rdfs:comment>A party that has a contract to participate in the Capacity Market to
+acquire capacity through a Transmission Capacity Allocator.
+&lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;
+The capacity may be acquired on behalf of an Interconnection Trade
+Responsible or for sale on secondary capacity markets.</rdfs:comment>
+    <rdfs:label>CapacityTrader</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRole">
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <cims:belongsToCategory rdf:resource="#Package_MarketCommon"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdfs:comment>The external intended behaviour played by a party within the electricity market.</rdfs:comment>
+    <rdfs:label>MarketRole</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.BillingAgent">
+    <rdfs:comment>The party responsible for invoicing a concerned party.</rdfs:comment>
+    <rdfs:label>BillingAgent</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.MOLResponsible">
+    <rdfs:comment>Responsible for the management of the available tenders for all
+Acquiring
+System Operators to establish the order of the reserve capacity
+that can
+be activated.</rdfs:comment>
+    <rdfs:label>MOLResponsible</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TelephoneNumber">
+    <cims:belongsToCategory rdf:resource="#Package_Common"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#compound"/>
+    <rdfs:comment>Telephone number.</rdfs:comment>
+    <rdfs:label>TelephoneNumber</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.CapacityCoordinator">
+    <rdfs:comment>A party, acting on behalf of the System Operators involved,
+responsible for establishing a coordinated Offered Capacity and/or
+Net Transfer Capacity (NTC) and/or Available Transfer Capacity (ATC) between several Market Balance Areas.</rdfs:comment>
+    <rdfs:label>CapacityCoordinator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.planningAuthority">
+    <rdfs:comment>Planning authority.</rdfs:comment>
+    <rdfs:label>planningAuthority</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.transmissionServiceProvider">
+    <rdfs:comment>Transmission service provider.</rdfs:comment>
+    <rdfs:label>transmissionServiceProvider</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRole.roleType">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Defined using an enumerated list of types of market roles for use when a finite list of types are desired.</rdfs:comment>
+    <rdfs:label>roleType</rdfs:label>
+    <rdfs:range rdf:resource="#MarketRoleKind"/>
+    <rdfs:domain rdf:resource="#MarketRole"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.MeteredDataAggregator">
+    <rdfs:comment>A party responsible for the establishment and qualification of metered
+data from the Metered Data Responsible. This data is aggregated
+according to a defined set of market rules.</rdfs:comment>
+    <rdfs:label>MeteredDataAggregator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Reason.text">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The textual explanation corresponding to the reason code.</rdfs:comment>
+    <rdfs:label>text</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Reason"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.SystemOperator">
+    <rdfs:comment>A party that is responsible for a stable power system operation
+(including the organisation of physical balance) through a
+transmission grid in a geographical area. The System Operator will
+also determine and be responsible for cross border capacity and
+exchanges. If necessary he may reduce allocated capacity to ensure
+operational stability.
+Transmission as mentioned above means "the transport of electricity
+on the extra high or high voltage network with a view to its delivery to
+final customers or to distributors. Operation of transmission includes
+as well the tasks of system operation concerning its management of
+energy flows, relibability of the system and availability of all
+necessary system services." (definition taken from the ENTSO-E
+RGCE Operation handbook Glossary).
+&lt;b&gt;&lt;i&gt;Note: &lt;/i&gt;&lt;/b&gt;additional obligations may be imposed through local market
+rules.</rdfs:comment>
+    <rdfs:label>SystemOperator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Package_Core">
+    <cims:belongsToCategory rdf:resource="#Package_IEC61970"/>
+    <rdfs:comment>Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it.</rdfs:comment>
+    <rdfs:label>Core</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject.name">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The name is any free human readable and possibly non unique text naming the object.</rdfs:comment>
+    <rdfs:label>name</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#IdentifiedObject"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.CoordinationCenterOperator">
+    <rdfs:comment>Responsible for :
+1. The coordination of exchange programs between its related
+Control Blocks and for the exchanges between its associated
+Coordination Center Zones.
+2. Ensuring that its Control Blocks respect their obligations in respect
+to load frequency control.
+3. Calculating the time deviation in cooperation with the associated
+coordination centers.
+4. Carrying out the settlement and/or compensation between its
+Control Blocks and against the other Coordination Center Zones.</rdfs:comment>
+    <rdfs:label>CoordinationCenterOperator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.MeteredDataCollector">
+    <rdfs:comment>A party responsible for meter reading and quality control of the
+reading.</rdfs:comment>
+    <rdfs:label>MeteredDataCollector</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.reliabilityAuthority">
+    <rdfs:comment>Reliability authority.</rdfs:comment>
+    <rdfs:label>reliabilityAuthority</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject">
+    <cims:belongsToCategory rdf:resource="#Package_Core"/>
+    <rdfs:comment>This is a root class to provide common identification for all classes needing identification and naming attributes.</rdfs:comment>
+    <rdfs:label>IdentifiedObject</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject.mRID">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Master resource identifier issued by a model authority. The mRID is globally unique within an exchange context.
+Global uniqeness is easily achived by using a UUID for the mRID. It is strongly recommended to do this.
+For CIMXML data files in RDF syntax, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</rdfs:comment>
+    <rdfs:label>mRID</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#IdentifiedObject"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.ControlAreaOperator">
+    <rdfs:comment>Responsible for :
+1. The coordination of exchange programs between its related Market
+Balance Areas and for the exchanges between its associated Control
+Areas.
+2. The load frequency control for its own area.
+3. The coordination of the correction of time deviations.</rdfs:comment>
+    <rdfs:label>ControlAreaOperator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRole.type">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The kind of market roles that can be played by parties for given domains within the electricity market. Types are flexible using dataType of string for free-entry of role types.</rdfs:comment>
+    <rdfs:label>type</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#MarketRole"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.interchangeAuthority">
+    <rdfs:comment>Interchange authority.</rdfs:comment>
+    <rdfs:label>interchangeAuthority</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.Producer">
+    <rdfs:comment>A party that produces electricity.
+&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;
+This is a type of Party Connected to the Grid.</rdfs:comment>
+    <rdfs:label>Producer</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRole.status">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Status of the market role.</rdfs:comment>
+    <rdfs:label>status</rdfs:label>
+    <rdfs:range rdf:resource="#Status"/>
+    <rdfs:domain rdf:resource="#MarketRole"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Organisation.postalAddress">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Postal address, potentially different than 'streetAddress' (e.g., another city).</rdfs:comment>
+    <rdfs:label>postalAddress</rdfs:label>
+    <rdfs:range rdf:resource="#PostalAddress"/>
+    <rdfs:domain rdf:resource="#Organisation"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Auction.type">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The kind of the Auction (e.g. implicit, explicit ...).</rdfs:comment>
+    <rdfs:label>type</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Auction"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.MeteringPointAdministrator">
+    <rdfs:comment>A party responsible for registering the parties linked to the metering
+points in a Metering Grid Area. He is also responsible for maintaining
+the Metering Point technical specifications. He is responsible for
+creating and terminating metering points.</rdfs:comment>
+    <rdfs:label>MeteringPointAdministrator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.MarketOperator">
+    <rdfs:comment>The unique power exchange of trades for the actual delivery of
+energy that receives the bids from the Balance Responsible Parties
+that have a contract to bid. The Market Operator determines the
+market energy price for the Market Balance Area after applying
+technical constraints from the System Operator. It may also establish
+the price for the reconciliation within a Metering Grid Area.</rdfs:comment>
+    <rdfs:label>MarketOperator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.ProductionResponsibleParty">
+    <rdfs:comment>A party who can be brought to rights, legally and financially, for any
+imbalance between energy nominated and produced for all
+associated Accounting Points.
+&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;
+This is a type of Balance Responsible Party.</rdfs:comment>
+    <rdfs:label>ProductionResponsibleParty</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.transmissionPlanner">
+    <rdfs:comment>Transmission planner.</rdfs:comment>
+    <rdfs:label>transmissionPlanner</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Reason">
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <cims:belongsToCategory rdf:resource="#Package_MarketManagement"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdfs:comment>The motivation of an act.</rdfs:comment>
+    <rdfs:label>Reason</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.MarketInformationAggregator">
+    <rdfs:comment>Market Information Aggregator, A party that provides market related
+information that has been compiled from the figures supplied by
+different actors in the market. This information may also be published
+or distributed for general use.
+&lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;
+The Market Information Aggregator may receive information from any
+market participant that is relevant for publication or distribution.</rdfs:comment>
+    <rdfs:label>MarketInformationAggregator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BidTimeSeries.linkedBidsIdentification">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Unique identification associated with all linked bids.</rdfs:comment>
+    <rdfs:label>linkedBidsIdentification</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#BidTimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Point.quantity">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The capacity or energy for a given time interval.</rdfs:comment>
+    <rdfs:label>quantity</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="#Point"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Package_IEC62325">
+    <cims:belongsToCategory rdf:resource="#Package_TC57CIM"/>
+    <rdfs:comment>This package contains the common objects shared by both MarketManagement and MarketOperations packages.</rdfs:comment>
+    <rdfs:label>IEC62325</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.energyServiceConsumer">
+    <rdfs:comment>Energy service consumer.</rdfs:comment>
+    <rdfs:label>energyServiceConsumer</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Organisation.phone2">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Additional phone number.</rdfs:comment>
+    <rdfs:label>phone2</rdfs:label>
+    <rdfs:range rdf:resource="#TelephoneNumber"/>
+    <rdfs:domain rdf:resource="#Organisation"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.MeterOperator">
+    <rdfs:comment>A party responsible for installing, maintaining, testing, certifying and
+decommissioning physical meters.</rdfs:comment>
+    <rdfs:label>MeterOperator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Package_Common">
+    <cims:belongsToCategory rdf:resource="#Package_IEC61968"/>
+    <rdfs:comment>This package contains the information classes that support distribution management in general.</rdfs:comment>
+    <rdfs:label>Common</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.balancingAuthority">
+    <rdfs:comment>Balancing authority.</rdfs:comment>
+    <rdfs:label>balancingAuthority</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Organisation.electronicAddress">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Electronic address.</rdfs:comment>
+    <rdfs:label>electronicAddress</rdfs:label>
+    <rdfs:range rdf:resource="#ElectronicAddress"/>
+    <rdfs:domain rdf:resource="#Organisation"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.PartyConnectedToTheGrid">
+    <rdfs:comment>A party that contracts for the right to consume or produce electricity at
+an Accounting Point.</rdfs:comment>
+    <rdfs:label>PartyConnectedToTheGrid</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TimeSeries.Auction">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdfs:label>Auction</rdfs:label>
+    <rdfs:range rdf:resource="#Auction"/>
+    <rdfs:domain rdf:resource="#TimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BidTimeSeries.direction">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The coded identification of the energy flow.</rdfs:comment>
+    <rdfs:label>direction</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#BidTimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.TransmissionCapacityAllocator">
+    <rdfs:comment>Manages the allocation of transmission capacity for an Allocated
+Capacity Area.
+&lt;b&gt;&lt;i&gt;For explicit auctions:&lt;/i&gt;&lt;/b&gt;
+The Transmission Capacity Allocator manages, on behalf of the
+System Operators, the allocation of available transmission capacity
+for an Allocated capacity Area. He offers the available transmission
+capacity to the market, allocates the available transmission capacity
+to individual Capacity Traders and calculates the billing amount of
+already allocated capacities to the Capacity Traders.</rdfs:comment>
+    <rdfs:label>TransmissionCapacityAllocator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Package_TC57CIM">
+    <rdfs:comment>The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: interfaces for distribution management (WG14).
+Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-3, IEC 61968-4, IEC 61968-9 and in IEC 61968-13.</rdfs:comment>
+    <rdfs:label>TC57CIM</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.ReserveAllocator">
+    <rdfs:comment>Informs the market of reserve requirements, receives tenders against
+the
+requirements and in compliance with the prequalification criteria,
+determines what tenders meet requirements and assigns tenders.</rdfs:comment>
+    <rdfs:label>ReserveAllocator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.distributionProvider">
+    <rdfs:comment>Distribution provider.</rdfs:comment>
+    <rdfs:label>distributionProvider</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.ReconciliationResponsible">
+    <rdfs:comment>A party that is responsible for reconciling, within a Metering Grid
+Area, the volumes used in the imbalance settlement process for
+profiled Accounting Points and the actual metered quantities.
+Note:
+The Reconciliation Responsible may delegate the invoicing
+responsibility to a more generic role such as a Billing Agent.</rdfs:comment>
+    <rdfs:label>ReconciliationResponsible</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Auction">
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <cims:belongsToCategory rdf:resource="#Package_MarketManagement"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdfs:comment>A class providing the identification and type of an auction.</rdfs:comment>
+    <rdfs:label>Auction</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BidTimeSeries.minimumActivationQuantity">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The minimum quantity of energy that can be activated at a given time interval.</rdfs:comment>
+    <rdfs:label>minimumActivationQuantity</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="#BidTimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.GridAccessProvider">
+    <rdfs:comment>A party responsible for providing access to the grid through an
+Accounting Point and its use for energy consumption or production to
+the Party Connected to the Grid.</rdfs:comment>
+    <rdfs:label>GridAccessProvider</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.BalanceSupplier">
+    <rdfs:comment>A party that markets the difference between actual metered energy
+consumption and the energy bought with firm energy contracts by the
+Party Connected to the Grid. In addition the Balance Supplier
+markets any difference with the firm energy contract (of the Party
+Connected to the Grid) and the metered production.
+&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;
+There is only one Balance Supplier for each Accounting Point.</rdfs:comment>
+    <rdfs:label>BalanceSupplier</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.NominationValidator">
+    <rdfs:comment>Has the responsibility of ensuring that all capacity nominated is within
+the allowed limits and confirming all valid nominations to all involved
+parties. He informs the Interconnection Trade Responsible of the
+maximum nominated capacity allowed. Depending on market rules
+for a given interconnection the corresponding System Operators may
+appoint one Nomination Validator.</rdfs:comment>
+    <rdfs:label>NominationValidator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TimeSeries">
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <cims:belongsToCategory rdf:resource="#Package_MarketManagement"/>
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdfs:comment>A set of regular time-ordered measurements or values of quantitative nature of an individual or collective phenomenon taken at successive, in most cases equidistant, periods / points of time.</rdfs:comment>
+    <rdfs:label>TimeSeries</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TimeSeries.objectAggregation">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Identification of the object that is the common dominator used to aggregate a time series.</rdfs:comment>
+    <rdfs:label>objectAggregation</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#TimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject.aliasName">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.
+The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</rdfs:comment>
+    <rdfs:label>aliasName</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#IdentifiedObject"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.purchasingSellingEntity">
+    <rdfs:comment>Purchasing selling entity.</rdfs:comment>
+    <rdfs:label>purchasingSellingEntity</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Organisation.phone1">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Phone number.</rdfs:comment>
+    <rdfs:label>phone1</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Organisation"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.GridOperator">
+    <rdfs:comment>A party that operates one or more grids.</rdfs:comment>
+    <rdfs:label>GridOperator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.SchedulingCoordinator">
+    <rdfs:comment>A party that is responsible for the schedule information and its
+exchange on behalf of a Balance Responsible Party.
+For example in the Polish market a Scheduling Coordinator is
+responsible for information interchange for scheduling and
+settlement.</rdfs:comment>
+    <rdfs:label>SchedulingCoordinator</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Point.Reason">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdfs:label>Reason</rdfs:label>
+    <rdfs:range rdf:resource="#Reason"/>
+    <rdfs:domain rdf:resource="#Point"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Package_MarketCommon">
+    <cims:belongsToCategory rdf:resource="#Package_IEC62325"/>
+    <rdfs:comment>This package contains the common objects shared by both MarketManagement and MarketOperations packages.</rdfs:comment>
+    <rdfs:label>MarketCommon</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MeasurementPoint.TimeSeries">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdfs:label>TimeSeries</rdfs:label>
+    <rdfs:range rdf:resource="#TimeSeries"/>
+    <rdfs:domain rdf:resource="#MeasurementPoint"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TimeSeries.version">
+    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Version of the time series.</rdfs:comment>
+    <rdfs:label>version</rdfs:label>
+    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#TimeSeries"/>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MarketRoleKind.generatorOwner">
+    <rdfs:comment>Generator merchant owner.</rdfs:comment>
+    <rdfs:label>generatorOwner</rdfs:label>
+    <rdf:type rdf:resource="#MarketRoleKind"/>
+  </rdf:Description>
+</rdf:RDF>

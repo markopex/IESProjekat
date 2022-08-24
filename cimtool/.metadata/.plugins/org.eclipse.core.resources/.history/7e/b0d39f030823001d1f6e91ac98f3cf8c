@@ -1,0 +1,1714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:a="http://langdale.com.au/2005/Message#" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<head>
+<title>Profile Documentation</title>
+<style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+</head>
+<body>
+<h1>Profile Documentation</h1>
+<p/>
+<p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://iec.ch/TC57/2007/profile#</span>
+</p>
+<h1>Concrete Classes</h1>
+<div id="Auction" class="group">
+<a href="#Auction">
+<h2 class="concrete">Auction</h2>
+</a>
+<p class="package">MarketManagement</p>
+<p class="comment">A class providing the identification and type of an auction.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="Auction.type">type</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">The kind of the Auction (e.g. implicit, explicit ...).</p>
+</td>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="BidTimeSeries" class="group">
+<a href="#BidTimeSeries">
+<h2 class="concrete">BidTimeSeries</h2>
+</a>
+<p class="package">MarketManagement</p>
+<p class="comment">The formal specification of specific characteristics related to a bid.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.blockBid">blockBid</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">boolean</p>
+</td>
+<td>
+<p class="comment">Indication that  the values in the period are considered as a whole. They cannot be changed or subdivided.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.direction">direction</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">The coded identification of the energy flow.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.divisible">divisible</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">boolean</p>
+</td>
+<td>
+<p class="comment">An indication whether or not each element of the bid may be partially accepted or not.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.linkedBidsIdentification">linkedBidsIdentification</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">Unique identification associated with all linked bids.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.minimumActivationQuantity">minimumActivationQuantity</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">decimal</p>
+</td>
+<td>
+<p class="comment">The minimum quantity of energy that can be activated at a given time interval.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.stepIncrementQuantity">stepIncrementQuantity</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">decimal</p>
+</td>
+<td>
+<p class="comment">The minimum increment that can be applied for an increase in an activation request.</p>
+</td>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">objectAggregation</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.objectAggregation">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">product</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.product">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">version</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.version">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">Auction</p>
+</th>
+<td>
+<p class="cardinality">1..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#Auction">Auction</a>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.Auction">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MarketParticipant</p>
+</th>
+<td>
+<p class="cardinality">1..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#MarketParticipant">MarketParticipant</a>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.MarketParticipant">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">Reason</p>
+</th>
+<td>
+<p class="cardinality">1..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#Reason">Reason</a>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.Reason">TimeSeries</a>
+</p>
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="MarketParticipant" class="group">
+<a href="#MarketParticipant">
+<h2 class="concrete">MarketParticipant</h2>
+</a>
+<p class="package">MarketCommon</p>
+<p class="comment">An identification of a party acting in a electricity market business process. This class is used to identify organizations that can participate in market management and/or market operations.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="MarketParticipant.MarketRole">MarketRole</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#MarketRole">MarketRole</a>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">phone1</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#Organisation.phone1">Organisation</a>
+</p>
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="MarketRole" class="group">
+<a href="#MarketRole">
+<h2 class="concrete">MarketRole</h2>
+</a>
+<p class="package">MarketCommon</p>
+<p class="comment">The external intended behaviour played by a party within the electricity market.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="MarketRole.roleType">roleType</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#MarketRoleKind">MarketRoleKind</a>
+</p>
+</td>
+<td>
+<p class="comment">Defined using an enumerated list of types of market roles for use when a finite list of types are desired.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="MarketRole.type">type</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">The kind of market roles that can be played by parties for given domains within the electricity market. Types are flexible using dataType of string for free-entry of role types.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="MarketRole.status">status</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#Status">Status</a>
+</p>
+</td>
+<td>
+<p class="comment">Status of the market role.</p>
+</td>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="MeasurementPoint" class="group">
+<a href="#MeasurementPoint">
+<h2 class="concrete">MeasurementPoint</h2>
+</a>
+<p class="package">MarketManagement</p>
+<p class="comment">The location where one or more products are measured. This may be a physical or virtual location.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="MeasurementPoint.TimeSeries">TimeSeries</p>
+</th>
+<td>
+<p class="cardinality">1..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#TimeSeries">TimeSeries</a>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="Point" class="group">
+<a href="#Point">
+<h2 class="concrete">Point</h2>
+</a>
+<p class="package">MarketManagement</p>
+<p class="comment">An identification of a set of values beeing adressed within a specific interval of time.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="Point.bidQuantity">bidQuantity</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">decimal</p>
+</td>
+<td>
+<p class="comment">The quantity provided in a tender.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="Point.position">position</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">integer</p>
+</td>
+<td>
+<p class="comment">A sequential value representing the relative position within a given time interval.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="Point.quantity">quantity</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">decimal</p>
+</td>
+<td>
+<p class="comment">The capacity or energy for a given time interval.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="Point.Reason">Reason</p>
+</th>
+<td>
+<p class="cardinality">1..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#Reason">Reason</a>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="Reason" class="group">
+<a href="#Reason">
+<h2 class="concrete">Reason</h2>
+</a>
+<p class="package">MarketManagement</p>
+<p class="comment">The motivation of an act.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="Reason.code">code</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">The motivation of an act in coded form.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="Reason.text">text</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">The textual explanation corresponding to the reason code.</p>
+</td>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<h1>Abstract Classes</h1>
+<div id="IdentifiedObject" class="group">
+<a href="#IdentifiedObject">
+<h2 class="abstract">IdentifiedObject</h2>
+</a>
+<p class="package">Core</p>
+<p class="comment">This is a root class to provide common identification for all classes needing identification and naming attributes.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="IdentifiedObject.mRID">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">Master resource identifier issued by a model authority. The mRID is globally unique within an exchange context.</p>
+<p class="comment">Global uniqeness is easily achived by using a UUID for the mRID. It is strongly recommended to do this.</p>
+<p class="comment">For CIMXML data files in RDF syntax, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="IdentifiedObject.aliasName">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+<p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="IdentifiedObject.name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="Organisation" class="group">
+<a href="#Organisation">
+<h2 class="abstract">Organisation</h2>
+</a>
+<p class="package">Common</p>
+<p class="comment">Organisation that might have roles as utility, contractor, supplier, manufacturer, customer, etc.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="Organisation.phone1">phone1</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">Phone number.</p>
+</td>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="TimeSeries" class="group">
+<a href="#TimeSeries">
+<h2 class="abstract">TimeSeries</h2>
+</a>
+<p class="package">MarketManagement</p>
+<p class="comment">A set of regular time-ordered measurements or values of quantitative nature of an individual or collective phenomenon taken at successive, in most cases equidistant, periods / points of time.</p>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="TimeSeries.objectAggregation">objectAggregation</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">Identification of the object that is the common dominator used to aggregate a time series.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.product">product</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">The type of the product such as Power, energy, reactive power, transport capacity that is the subject of the time series.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.version">version</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p class="comment">Version of the time series.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.Auction">Auction</p>
+</th>
+<td>
+<p class="cardinality">1..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#Auction">Auction</a>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.MarketParticipant">MarketParticipant</p>
+</th>
+<td>
+<p class="cardinality">1..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#MarketParticipant">MarketParticipant</a>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.Reason">Reason</p>
+</th>
+<td>
+<p class="cardinality">1..1</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#Reason">Reason</a>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..1</p>
+</td>
+<td class="type">
+<p class="type">string</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<h1>Enumerations</h1>
+<div id="MarketRoleKind" class="group">
+<a href="#MarketRoleKind">
+<h2 class="enumerated">MarketRoleKind</h2>
+</a>
+<p class="package">MarketCommon</p>
+<p class="comment">Kind of market role an organisation can have.</p>
+<table>
+<tr>
+<th>
+<p class="name">BalanceResponsibleParty</p>
+</th>
+<td>
+<p class="comment">A party that has a contract proving financial security and identifying</p>
+<p class="comment">balance responsibility with the Imbalance Settlement Responsible of</p>
+<p class="comment">the Market Balance Area entitling the party to operate in the market.</p>
+<p class="comment">This is the only role allowing a party to nominate energy on a</p>
+<p class="comment">wholesale level.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">The meaning of the word "balance" in this context signifies that that</p>
+<p class="comment">the quantity contracted to provide or to consume must be equal to the</p>
+<p class="comment">quantity really provided or consumed.</p>
+<p class="comment">Equivalent to "Program responsible party" in the Netherlands.</p>
+<p class="comment">Equivalent to "Balance group manager" in Germany.</p>
+<p class="comment">Equivalent to "market agent" in Spain.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">BalanceSupplier</p>
+</th>
+<td>
+<p class="comment">A party that markets the difference between actual metered energy</p>
+<p class="comment">consumption and the energy bought with firm energy contracts by the</p>
+<p class="comment">Party Connected to the Grid. In addition the Balance Supplier</p>
+<p class="comment">markets any difference with the firm energy contract (of the Party</p>
+<p class="comment">Connected to the Grid) and the metered production.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">There is only one Balance Supplier for each Accounting Point.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">BillingAgent</p>
+</th>
+<td>
+<p class="comment">The party responsible for invoicing a concerned party.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">BlockEnergyTrader</p>
+</th>
+<td>
+<p class="comment">A party that is selling or buying energy on a firm basis (a fixed volume</p>
+<p class="comment">per market time period).</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">CapacityCoordinator</p>
+</th>
+<td>
+<p class="comment">A party, acting on behalf of the System Operators involved,</p>
+<p class="comment">responsible for establishing a coordinated Offered Capacity and/or</p>
+<p class="comment">Net Transfer Capacity (NTC) and/or Available Transfer Capacity (ATC) between several Market Balance Areas.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">CapacityTrader</p>
+</th>
+<td>
+<p class="comment">A party that has a contract to participate in the Capacity Market to</p>
+<p class="comment">acquire capacity through a Transmission Capacity Allocator.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">The capacity may be acquired on behalf of an Interconnection Trade</p>
+<p class="comment">Responsible or for sale on secondary capacity markets.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">Consumer</p>
+</th>
+<td>
+<p class="comment">A party that consumes electricity.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">This is a Type of Party Connected to the Grid.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">ConsumptionResponsibleParty</p>
+</th>
+<td>
+<p class="comment">A party who can be brought to rights, legally and financially, for any</p>
+<p class="comment">imbalance between enegry nominated and consumed for all</p>
+<p class="comment">associated Accounting Points.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">This is a type of Balance Responsible Party.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">ControlAreaOperator</p>
+</th>
+<td>
+<p class="comment">Responsible for :</p>
+<p class="comment">1. The coordination of exchange programs between its related Market</p>
+<p class="comment">Balance Areas and for the exchanges between its associated Control</p>
+<p class="comment">Areas.</p>
+<p class="comment">2. The load frequency control for its own area.</p>
+<p class="comment">3. The coordination of the correction of time deviations.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">ControlBlockOperator</p>
+</th>
+<td>
+<p class="comment">Responsible for :</p>
+<p class="comment">1. The coordination of exchanges between its associated Control</p>
+<p class="comment">Blocks and the organisation of the coordination of exchange</p>
+<p class="comment">programs between its related Control Areas.</p>
+<p class="comment">2. The load frequency control within its own block and ensuring that</p>
+<p class="comment">its Control Areas respect their obligations in respect to load frequency</p>
+<p class="comment">control and time deviation.</p>
+<p class="comment">3. The organisation of the settlement and/or compensation between</p>
+<p class="comment">its Control Areas.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">CoordinationCenterOperator</p>
+</th>
+<td>
+<p class="comment">Responsible for :</p>
+<p class="comment">1. The coordination of exchange programs between its related</p>
+<p class="comment">Control Blocks and for the exchanges between its associated</p>
+<p class="comment">Coordination Center Zones.</p>
+<p class="comment">2. Ensuring that its Control Blocks respect their obligations in respect</p>
+<p class="comment">to load frequency control.</p>
+<p class="comment">3. Calculating the time deviation in cooperation with the associated</p>
+<p class="comment">coordination centers.</p>
+<p class="comment">4. Carrying out the settlement and/or compensation between its</p>
+<p class="comment">Control Blocks and against the other Coordination Center Zones.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">GridAccessProvider</p>
+</th>
+<td>
+<p class="comment">A party responsible for providing access to the grid through an</p>
+<p class="comment">Accounting Point and its use for energy consumption or production to</p>
+<p class="comment">the Party Connected to the Grid.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">GridOperator</p>
+</th>
+<td>
+<p class="comment">A party that operates one or more grids.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">ImbalanceSettlementResponsible</p>
+</th>
+<td>
+<p class="comment">A party that is responsible for settlement of the difference between</p>
+<p class="comment">the contracted quantities and the realised quantities of energy</p>
+<p class="comment">products for the Balance Responsible Parties in a Market Balance</p>
+<p class="comment">Area.</p>
+<p class="comment">Note:</p>
+<p class="comment">The Imbalance Settlement Responsible has not the responsibility to</p>
+<p class="comment">invoice. The Imbalance Settlement Responsible may delegate the</p>
+<p class="comment">invoicing responsibility to a more generic role such as a Billing Agent.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">InterconnectionTradeResponsible</p>
+</th>
+<td>
+<p class="comment">Is a Balance Responsible Party or depends on one. He is recognised</p>
+<p class="comment">by the Nomination Validator for the nomination of already allocated</p>
+<p class="comment">capacity.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">This is a type of Balance Responsible Party.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MOLResponsible</p>
+</th>
+<td>
+<p class="comment">Responsible for the management of the available tenders for all</p>
+<p class="comment">Acquiring</p>
+<p class="comment">System Operators to establish the order of the reserve capacity</p>
+<p class="comment">that can</p>
+<p class="comment">be activated.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MarketInformationAggregator</p>
+</th>
+<td>
+<p class="comment">Market Information Aggregator, A party that provides market related</p>
+<p class="comment">information that has been compiled from the figures supplied by</p>
+<p class="comment">different actors in the market. This information may also be published</p>
+<p class="comment">or distributed for general use.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">The Market Information Aggregator may receive information from any</p>
+<p class="comment">market participant that is relevant for publication or distribution.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MarketOperator</p>
+</th>
+<td>
+<p class="comment">The unique power exchange of trades for the actual delivery of</p>
+<p class="comment">energy that receives the bids from the Balance Responsible Parties</p>
+<p class="comment">that have a contract to bid. The Market Operator determines the</p>
+<p class="comment">market energy price for the Market Balance Area after applying</p>
+<p class="comment">technical constraints from the System Operator. It may also establish</p>
+<p class="comment">the price for the reconciliation within a Metering Grid Area.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MeterAdministrator</p>
+</th>
+<td>
+<p class="comment">A party responsible for keeping a database of meters.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MeterOperator</p>
+</th>
+<td>
+<p class="comment">A party responsible for installing, maintaining, testing, certifying and</p>
+<p class="comment">decommissioning physical meters.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MeteredDataAggregator</p>
+</th>
+<td>
+<p class="comment">A party responsible for the establishment and qualification of metered</p>
+<p class="comment">data from the Metered Data Responsible. This data is aggregated</p>
+<p class="comment">according to a defined set of market rules.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MeteredDataCollector</p>
+</th>
+<td>
+<p class="comment">A party responsible for meter reading and quality control of the</p>
+<p class="comment">reading.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MeteredDataResponsible</p>
+</th>
+<td>
+<p class="comment">A party responsible for the establishment and validation of metered</p>
+<p class="comment">data based on the collected data received from the Metered Data</p>
+<p class="comment">Collector. The party is responsible for the history of metered data for</p>
+<p class="comment">a Metering Point.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MeteringPointAdministrator</p>
+</th>
+<td>
+<p class="comment">A party responsible for registering the parties linked to the metering</p>
+<p class="comment">points in a Metering Grid Area. He is also responsible for maintaining</p>
+<p class="comment">the Metering Point technical specifications. He is responsible for</p>
+<p class="comment">creating and terminating metering points.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">NominationValidator</p>
+</th>
+<td>
+<p class="comment">Has the responsibility of ensuring that all capacity nominated is within</p>
+<p class="comment">the allowed limits and confirming all valid nominations to all involved</p>
+<p class="comment">parties. He informs the Interconnection Trade Responsible of the</p>
+<p class="comment">maximum nominated capacity allowed. Depending on market rules</p>
+<p class="comment">for a given interconnection the corresponding System Operators may</p>
+<p class="comment">appoint one Nomination Validator.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">PartyConnectedToTheGrid</p>
+</th>
+<td>
+<p class="comment">A party that contracts for the right to consume or produce electricity at</p>
+<p class="comment">an Accounting Point.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">Producer</p>
+</th>
+<td>
+<p class="comment">A party that produces electricity.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">This is a type of Party Connected to the Grid.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">ProductionResponsibleParty</p>
+</th>
+<td>
+<p class="comment">A party who can be brought to rights, legally and financially, for any</p>
+<p class="comment">imbalance between energy nominated and produced for all</p>
+<p class="comment">associated Accounting Points.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">This is a type of Balance Responsible Party.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">ReconciliationAccountable</p>
+</th>
+<td>
+<p class="comment">A party that is financially accountable for the reconciled volume of</p>
+<p class="comment">energy products for a profiled Accounting Point.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">ReconciliationResponsible</p>
+</th>
+<td>
+<p class="comment">A party that is responsible for reconciling, within a Metering Grid</p>
+<p class="comment">Area, the volumes used in the imbalance settlement process for</p>
+<p class="comment">profiled Accounting Points and the actual metered quantities.</p>
+<p class="comment">Note:</p>
+<p class="comment">The Reconciliation Responsible may delegate the invoicing</p>
+<p class="comment">responsibility to a more generic role such as a Billing Agent.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">ReserveAllocator</p>
+</th>
+<td>
+<p class="comment">Informs the market of reserve requirements, receives tenders against</p>
+<p class="comment">the</p>
+<p class="comment">requirements and in compliance with the prequalification criteria,</p>
+<p class="comment">determines what tenders meet requirements and assigns tenders.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">ResourceProvider</p>
+</th>
+<td>
+<p class="comment">A role that manages a resource object and provides the schedules for</p>
+<p class="comment">it</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">SchedulingCoordinator</p>
+</th>
+<td>
+<p class="comment">A party that is responsible for the schedule information and its</p>
+<p class="comment">exchange on behalf of a Balance Responsible Party.</p>
+<p class="comment">For example in the Polish market a Scheduling Coordinator is</p>
+<p class="comment">responsible for information interchange for scheduling and</p>
+<p class="comment">settlement.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">SystemOperator</p>
+</th>
+<td>
+<p class="comment">A party that is responsible for a stable power system operation</p>
+<p class="comment">(including the organisation of physical balance) through a</p>
+<p class="comment">transmission grid in a geographical area. The System Operator will</p>
+<p class="comment">also determine and be responsible for cross border capacity and</p>
+<p class="comment">exchanges. If necessary he may reduce allocated capacity to ensure</p>
+<p class="comment">operational stability.</p>
+<p class="comment">Transmission as mentioned above means "the transport of electricity</p>
+<p class="comment">on the extra high or high voltage network with a view to its delivery to</p>
+<p class="comment">final customers or to distributors. Operation of transmission includes</p>
+<p class="comment">as well the tasks of system operation concerning its management of</p>
+<p class="comment">energy flows, relibability of the system and availability of all</p>
+<p class="comment">necessary system services." (definition taken from the ENTSO-E</p>
+<p class="comment">RGCE Operation handbook Glossary).</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Note: &lt;/i&gt;&lt;/b&gt;additional obligations may be imposed through local market</p>
+<p class="comment">rules.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">TradeResponsibleParty</p>
+</th>
+<td>
+<p class="comment">A party who can be brought to rights, legally and financially, for any</p>
+<p class="comment">imbalance between enegry nominated and consumed for all</p>
+<p class="comment">associated Accounting Points.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">A power exchange without any privileged responsibilities acts as a</p>
+<p class="comment">Trade Responsible Party.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;Additional information:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">This is a type of Balance Responsible Party.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">TransmissionCapacityAllocator</p>
+</th>
+<td>
+<p class="comment">Manages the allocation of transmission capacity for an Allocated</p>
+<p class="comment">Capacity Area.</p>
+<p class="comment">&lt;b&gt;&lt;i&gt;For explicit auctions:&lt;/i&gt;&lt;/b&gt;</p>
+<p class="comment">The Transmission Capacity Allocator manages, on behalf of the</p>
+<p class="comment">System Operators, the allocation of available transmission capacity</p>
+<p class="comment">for an Allocated capacity Area. He offers the available transmission</p>
+<p class="comment">capacity to the market, allocates the available transmission capacity</p>
+<p class="comment">to individual Capacity Traders and calculates the billing amount of</p>
+<p class="comment">already allocated capacities to the Capacity Traders.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">balancingAuthority</p>
+</th>
+<td>
+<p class="comment">Balancing authority.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">competitiveRetailer</p>
+</th>
+<td>
+<p class="comment">Competitive retailer.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">complianceMonitor</p>
+</th>
+<td>
+<p class="comment">Compliance monitor.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">distributionProvider</p>
+</th>
+<td>
+<p class="comment">Distribution provider.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">energyServiceConsumer</p>
+</th>
+<td>
+<p class="comment">Energy service consumer.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">generatorOperator</p>
+</th>
+<td>
+<p class="comment">Generator merchant operator.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">generatorOwner</p>
+</th>
+<td>
+<p class="comment">Generator merchant owner.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">interchangeAuthority</p>
+</th>
+<td>
+<p class="comment">Interchange authority.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">loadServingEntity</p>
+</th>
+<td>
+<p class="comment">Load serving entity.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">planningAuthority</p>
+</th>
+<td>
+<p class="comment">Planning authority.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">purchasingSellingEntity</p>
+</th>
+<td>
+<p class="comment">Purchasing selling entity.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">reliabilityAuthority</p>
+</th>
+<td>
+<p class="comment">Reliability authority.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">resourcePlanner</p>
+</th>
+<td>
+<p class="comment">Resource planner.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">standardsDeveloper</p>
+</th>
+<td>
+<p class="comment">Standards developer.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">transmissionOperator</p>
+</th>
+<td>
+<p class="comment">Transmission operator.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">transmissionOwner</p>
+</th>
+<td>
+<p class="comment">Transmission owner.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">transmissionPlanner</p>
+</th>
+<td>
+<p class="comment">Transmission planner.</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">transmissionServiceProvider</p>
+</th>
+<td>
+<p class="comment">Transmission service provider.</p>
+</td>
+</tr>
+</table>
+</div>
+<h1>Compound Types</h1>
+<h1>Datatypes</h1>
+</body>
+</html>

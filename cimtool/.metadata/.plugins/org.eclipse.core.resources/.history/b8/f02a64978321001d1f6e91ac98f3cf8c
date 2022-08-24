@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:a="http://langdale.com.au/2005/Message#" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<head>
+<title>Profile Documentation</title>
+<style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+</head>
+<body>
+<h1>Profile Documentation</h1>
+<p/>
+<p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://iec.ch/TC57/2007/profile#</span>
+</p>
+<h1>Concrete Classes</h1>
+<div id="Auction" class="group">
+<a href="#Auction">
+<h2 class="concrete">Auction</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="Auction.type">type</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="BidTimeSeries" class="group">
+<a href="#BidTimeSeries">
+<h2 class="concrete">BidTimeSeries</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.blockBid">blockBid</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.direction">direction</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.divisible">divisible</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.linkedBidsIdentification">linkedBidsIdentification</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.minimumActivationQuantity">minimumActivationQuantity</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="BidTimeSeries.stepIncrementQuantity">stepIncrementQuantity</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">Auction</p>
+</th>
+<td>
+<p class="cardinality">1..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.Auction">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">MarketParticipant</p>
+</th>
+<td>
+<p class="cardinality">1..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.MarketParticipant">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">objectAggregation</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.objectAggregation">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">product</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.product">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">Reason</p>
+</th>
+<td>
+<p class="cardinality">1..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.Reason">TimeSeries</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">version</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#TimeSeries.version">TimeSeries</a>
+</p>
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="MarketParticipant" class="group">
+<a href="#MarketParticipant">
+<h2 class="concrete">MarketParticipant</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="MarketParticipant.MarketRole">MarketRole</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">phone1</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#Organisation.phone1">Organisation</a>
+</p>
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="MarketRole" class="group">
+<a href="#MarketRole">
+<h2 class="concrete">MarketRole</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="MarketRole.roleType">roleType</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="MarketRole.status">status</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="MarketRole.type">type</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="MeasurementPoint" class="group">
+<a href="#MeasurementPoint">
+<h2 class="concrete">MeasurementPoint</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="MeasurementPoint.TimeSeries">TimeSeries</p>
+</th>
+<td>
+<p class="cardinality">1..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="Point" class="group">
+<a href="#Point">
+<h2 class="concrete">Point</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="Point.bidQuantity">bidQuantity</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="Point.position">position</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="Point.quantity">quantity</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="Point.Reason">Reason</p>
+</th>
+<td>
+<p class="cardinality">1..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="Reason" class="group">
+<a href="#Reason">
+<h2 class="concrete">Reason</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="Reason.code">code</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="Reason.text">text</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<h1>Abstract Classes</h1>
+<div id="IdentifiedObject" class="group">
+<a href="#IdentifiedObject">
+<h2 class="abstract">IdentifiedObject</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="IdentifiedObject.aliasName">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="IdentifiedObject.mRID">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="IdentifiedObject.name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+</div>
+<div id="MarketRoleKind" class="group">
+<a href="#MarketRoleKind">
+<h2 class="abstract">MarketRoleKind</h2>
+</a>
+<p class="package"/>
+</div>
+<div id="Organisation" class="group">
+<a href="#Organisation">
+<h2 class="abstract">Organisation</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="Organisation.phone1">phone1</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="TimeSeries" class="group">
+<a href="#TimeSeries">
+<h2 class="abstract">TimeSeries</h2>
+</a>
+<p class="package"/>
+<h3>Native Members</h3>
+<table>
+<tr>
+<th>
+<p class="name" id="TimeSeries.Auction">Auction</p>
+</th>
+<td>
+<p class="cardinality">1..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.MarketParticipant">MarketParticipant</p>
+</th>
+<td>
+<p class="cardinality">1..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.objectAggregation">objectAggregation</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.product">product</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.Reason">Reason</p>
+</th>
+<td>
+<p class="cardinality">1..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+<tr>
+<th>
+<p class="name" id="TimeSeries.version">version</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td/>
+</tr>
+</table>
+<h3>Inherited Members</h3>
+<table>
+<tr>
+<th>
+<p class="name">aliasName</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.aliasName">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">mRID</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.mRID">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+<tr>
+<th>
+<p class="name">name</p>
+</th>
+<td>
+<p class="cardinality">0..unbounded</p>
+</td>
+<td class="type">
+<p class="type">
+<a href="#"/>
+</p>
+</td>
+<td>
+<p>see <a class="superclass" href="#IdentifiedObject.name">IdentifiedObject</a>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<h1>Enumerations</h1>
+<h1>Compound Types</h1>
+<h1>Datatypes</h1>
+</body>
+</html>

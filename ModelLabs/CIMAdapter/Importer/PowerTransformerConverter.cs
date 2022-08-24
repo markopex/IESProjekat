@@ -57,7 +57,7 @@
 				}
 			}
 		}
-		public static void PopulateTimeSeiesProperties(FTN.TimeSeries cimTimeSeries, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
+		public static void PopulateTimeSeriesProperties(FTN.TimeSeries cimTimeSeries, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
 		{
 			if ((cimTimeSeries != null) && (rd != null))
 			{
@@ -199,7 +199,7 @@
 		{
 			if ((cimBidTimeSeries != null) && (rd != null))
 			{
-				PowerTransformerConverter.PopulateTimeSeiesProperties(cimBidTimeSeries, rd, importHelper, report);
+				PowerTransformerConverter.PopulateTimeSeriesProperties(cimBidTimeSeries, rd, importHelper, report);
 
 				if (cimBidTimeSeries.BlockBidHasValue)
 				{
@@ -219,22 +219,22 @@
 				}
 			}
 		}
-		public static void PopulateTimeSeiesProperties(FTN.MeasurementPoint cimMeasurementPoint, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
+		public static void PopulateMeasurementPointProperties(FTN.MeasurementPoint cimMeasurementPoint, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
 		{
 			if ((cimMeasurementPoint != null) && (rd != null))
 			{
 				PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimMeasurementPoint, rd);
 
 				
-				if (cimMeasurementPoint.AuctionHasValue)
+				if (cimMeasurementPoint.TimeSeriesHasValue)
 				{
-					long gid = importHelper.GetMappedGID(cimMeasurementPoint.Auction.ID);
+					long gid = importHelper.GetMappedGID(cimMeasurementPoint.TimeSeries.ID);
 					if (gid < 0)
 					{
 						report.Report.Append("WARNING: Convert ").Append(cimMeasurementPoint.GetType().ToString()).Append(" rdfID = \"").Append(cimMeasurementPoint.ID);
-						report.Report.Append("\" - Failed to set reference to Location: rdfID \"").Append(cimMeasurementPoint.Auction.ID).AppendLine(" \" is not mapped to GID!");
+						report.Report.Append("\" - Failed to set reference to Location: rdfID \"").Append(cimMeasurementPoint.TimeSeries.ID).AppendLine(" \" is not mapped to GID!");
 					}
-					rd.AddProperty(new Property(ModelCode.TIMESERIES_AUCTION, gid));
+					rd.AddProperty(new Property(ModelCode.MEASUREMENTPOINT_TIMESERIES, gid));
 				}
 			}
 		}
